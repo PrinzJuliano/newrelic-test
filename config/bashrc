@@ -1,0 +1,27 @@
+HISTCONTROL=ignoredups:ignorespace
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+shopt -s histappend
+shopt -s checkwinsize
+
+# Aliases
+alias ls="ls --color=auto --group-directories-first"
+alias ll="ls -alF"
+alias la="ls -a"
+alias l="ls"
+alias grep="grep --color=auto"
+
+if [ ${EUID} -eq 0 ]; then
+    PS1="\[\e]0;\u@\h: \w\a\]\[\033[01;31m\]Root\[\033[00m\]"
+else
+    PS1="\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]${USER^}\[\033[00m\]"
+fi
+
+PS1+="\[\033[01;33m\]@\[\033[00m\]"
+PS1+="\[\033[01;36m\]$(hostname)\[\033[00m\]:"
+PS1+="\[\033[01;34m\]\w\[\033[00m\]\$ "
+
+eval "$(dircolors -b)"
+
+[ -d /usr/share/nginx/html ] && cd /usr/share/nginx/html

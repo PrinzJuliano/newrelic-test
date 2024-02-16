@@ -5,7 +5,8 @@ const config: CapacitorConfig = {
   appName: 'NewRelicAndroidBugs',
   webDir: 'www',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'https',
+    hostname: 'newrelic-test.prinzjuliano.com'
   }
 };
 
