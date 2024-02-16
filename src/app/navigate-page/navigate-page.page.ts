@@ -6,13 +6,24 @@ import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { AutofillDirective } from '../autofill.directive';
+import {
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonInput,
+  IonItem,
+  IonList,
+  IonText,
+  IonTitle,
+  IonToolbar
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-navigate-page',
   templateUrl: './navigate-page.page.html',
   styleUrls: ['./navigate-page.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, RouterLink, AutofillDirective]
+  imports: [CommonModule, FormsModule, RouterLink, AutofillDirective, IonItem, IonList, IonText, IonContent, IonHeader, IonToolbar, IonTitle, IonInput, IonButton]
 })
 export class NavigatePagePage implements ViewDidEnter, ViewDidLeave {
 
