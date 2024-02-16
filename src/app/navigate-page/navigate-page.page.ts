@@ -5,13 +5,14 @@ import { IonicModule, ViewDidEnter, ViewDidLeave } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { RouterLink } from '@angular/router';
+import { AutofillDirective } from '../autofill.directive';
 
 @Component({
   selector: 'app-navigate-page',
   templateUrl: './navigate-page.page.html',
   styleUrls: ['./navigate-page.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, RouterLink]
+  imports: [IonicModule, CommonModule, FormsModule, RouterLink, AutofillDirective]
 })
 export class NavigatePagePage implements ViewDidEnter, ViewDidLeave {
 
@@ -35,4 +36,7 @@ export class NavigatePagePage implements ViewDidEnter, ViewDidLeave {
     });
   }
 
+  logData($event: any) {
+    console.log($event);
+  }
 }
