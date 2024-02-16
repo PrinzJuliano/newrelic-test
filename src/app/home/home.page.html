@@ -14,7 +14,17 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button [routerLink]="['/', 'navigate-page']">
+      <ion-icon name="eye" slot="start"></ion-icon>
+      Click me to go somewhere
+    </ion-button>
+
+
+    <ion-button  (click)="fetchData()">
+      <ion-icon slot="start" name="cloud-download-outline"></ion-icon>
+      Click to fetch data
+    </ion-button>
   </div>
+
+  <div #dataDiv></div>
 </ion-content>
