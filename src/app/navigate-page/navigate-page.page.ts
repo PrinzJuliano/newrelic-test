@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ViewDidEnter, ViewDidLeave } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
-import { Subscription } from 'rxjs';
+import { catchError, Subscription } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { AutofillDirective } from '../autofill.directive';
 import {

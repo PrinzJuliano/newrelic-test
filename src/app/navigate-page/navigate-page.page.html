@@ -15,6 +15,7 @@
   <ion-item *ngIf="data" lines="full">
     <ion-text>{{ data.title }}</ion-text>
   </ion-item>
+  <br>
 
   <form (ngSubmit)="logData($event)">
     <ion-list>
@@ -27,7 +28,21 @@
                    autocomplete="current-password"></ion-input>
       </ion-item>
     </ion-list>
-    <ion-button type="submit">Submit</ion-button>
+    <ion-button type="submit">Login</ion-button>
+  </form>
+
+  <form (ngSubmit)="logData($event)">
+    <ion-list>
+      <ion-item>
+        <ion-input appAutofill labelPlacement="floating" label="Email for autofill test" type="email" required
+                   autocomplete="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input appAutofill labelPlacement="floating" label="Password for autofill test" type="password" required
+                   autocomplete="new-password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit">Register</ion-button>
   </form>
 
   <ion-button [routerLink]="['/']">Go back</ion-button>
